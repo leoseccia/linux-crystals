@@ -5,7 +5,7 @@ __usage() {
 }
 
 #location of repos
-declare repo_path=~/development/
+declare repo_path=~/Development/
 #editor command
 declare ide=code
 
@@ -25,11 +25,11 @@ done
 shift $((OPTIND-1))
 
 function projects {
-    print -l /Users/seccial/Development/*(/:t)
+    print -l $repo_path*(/:t)| grep -v -e ".archived"
 }
 
 #add aliases to all projects
 while IFS= read -r d; do 
     cur_dir="${d##*/}"
     alias "${cur_dir}"="$ide $d"
-done <<<$(print -l /Users/seccial/Development/*(/))
+done <<<$(print -l $repo_path*(/))| grep -v -e ".archived"
