@@ -32,4 +32,4 @@ function projects {
 while IFS= read -r d; do 
     cur_dir="${d##*/}"
     alias "${cur_dir}"="$ide $d"
-done <<<$(print -l $repo_path*(/))| grep -v -e ".archived"
+done <<<$(print -l $repo_path*(/) | grep -v -e ".archived")
