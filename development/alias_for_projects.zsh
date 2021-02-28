@@ -5,7 +5,7 @@ __usage() {
 }
 
 #location of repos
-declare repo_path=~/Development/
+declare repo_path=~/development/
 #editor command
 declare ide=code
 
