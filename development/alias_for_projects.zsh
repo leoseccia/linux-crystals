@@ -31,5 +31,5 @@ function projects {
 #add aliases to all projects
 while IFS= read -r d; do 
     cur_dir="${d##*/}"
-    alias "${cur_dir}"="$ide $d"
+    alias "${cur_dir}"="$ide $d | cd $d"
 done <<<$(print -l $repo_path*(/) | grep -v -e ".archived")
